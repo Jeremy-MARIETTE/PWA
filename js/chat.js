@@ -2,6 +2,19 @@
 let form = document.getElementById('form');
 let nom = document.getElementById('name');
 let message = document.getElementById('message');
+let app = document.getElementById('app');
+
+let ExistingItems = localStorage.getItem('items');
+if(ExistingItems){
+    ExistingItems = JSON.parse(ExistingItems);
+    ExistingItems.array.forEach(item => {
+        let p = document.createElement('p');
+        app.innerHTML = item.nom+ ':' + item.message;
+        app.appendChild(p);
+    });
+}
+
+
 
     form.addEventListener('submit',(e) =>{
 
@@ -14,7 +27,9 @@ let message = document.getElementById('message');
             alert('Veuillez entrer un message.')
         }
 
-        console.log(nom.value);
+        //console.log(nom.value);
+
+       
 
        let  item={
             id : Math.floor(Date.now()/100),
@@ -32,4 +47,5 @@ let message = document.getElementById('message');
 
         items.push(item);
         localStorage.setItem('nom',nom.value);
+        
     })
