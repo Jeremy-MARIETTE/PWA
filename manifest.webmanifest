@@ -3,9 +3,8 @@
     "short_name": "LP DWCA",
     "theme_color": "#2196f3",
     "background_color": "#2196f3",
-    "display": "standalone",
-    "scope": "/",
-    "start_url": "/",
+    "display" : "standalone",
+    "start_url": "/?source=pwa",
     "icons": [
         {
             "src": "images/icon-192x192.png",

@@ -6,7 +6,7 @@ self.addEventListener('activate', event=>{
 })
 self.addEventListener('fetch',event =>{
     if(!navigator.onLine){
-        //event.respondWith(new Response("probleme connexion internet"));
+        event.respondWith(new Response("probleme connexion internet"));
         console.log(event.request.url),
         console.log(`start server worker`)
     }
