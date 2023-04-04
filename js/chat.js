@@ -1,51 +1,57 @@
+let form = document.getElementById("form");
+let nom = document.getElementById("name");
+let message = document.getElementById("message");
+let app = document.getElementById("app");
 
-let form = document.getElementById('form');
-let nom = document.getElementById('name');
-let message = document.getElementById('message');
-let app = document.getElementById('app');
-
-let ExistingItems = localStorage.getItem('items');
-if(ExistingItems){
-    ExistingItems = JSON.parse(ExistingItems);
-    ExistingItems.array.forEach(item => {
-        let p = document.createElement('p');
-        app.innerHTML = item.nom+ ':' + item.message;
-        app.appendChild(p);
-    });
+let existingItems = localStorage.getItem("items");
+if (existingItems) {
+  existingItems = JSON.parse(existingItems);
+  existingItems.forEach((item) => {
+    let p = document.createElement("p");
+    p.innerHTML = item.nom + ": " + item.message;
+    app.appendChild(p);
+  });
 }
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
 
+  if (nom.value == "") {
+    alert("Veuillez entrer un nom.");
+  }
+  if (message.value == "") {
+    alert("Veuillez entrer un message.");
+  }
 
-    form.addEventListener('submit',(e) =>{
+  let item = {
+    id: Math.floor(Date.now() / 100),
+    nom: nom.value,
+    message: message.value,
+  };
 
-        e.preventDefault();
+  let items = [];
+  if (localStorage.getItem("items")) {
+    items = JSON.parse(localStorage.getItem("items"));
+  }
+  items.push(item);
+  localStorage.setItem("items", JSON.stringify(items));
 
-        if(nom.value == ""){
-            alert('Veuillez entrer un nom.')
-        }
-        if(message.value == ""){
-            alert('Veuillez entrer un message.')
-        }
+  let p = document.createElement("p");
+  p.innerHTML = item.id + " " + item.nom + ": " + item.message;
+  app.appendChild(p);
+});
 
-        //console.log(nom.value);
+// Creer un boutton pour effacer la conversation
+let clearBtn = document.createElement("button");
+clearBtn.innerText = "Effacer la conversation";
+let chatBox = document.getElementById("app");
 
-       
+// Ajouter un gestionnaire d'événements "click" au bouton
+clearBtn.addEventListener("click", () => {
+  localStorage.removeItem("items");
+  chatBox.innerHTML = "";
+});
 
-       let  item={
-            id : Math.floor(Date.now()/100),
-            nom:nom.value,
-            message:message.value
-        }
-
-        let items = [];
-
-        if(localStorage.getItem('item')){
-            let insertItems = JSON.parse(localStorage.getItem('item'));
-            item = items;
-        }
-        console.log(item);
-
-        items.push(item);
-        localStorage.setItem('nom',nom.value);
-        
-    })
+// Ajouter le bouton effacer la conversation au document
+let container = document.querySelector(".container");
+container.appendChild(clearBtn);

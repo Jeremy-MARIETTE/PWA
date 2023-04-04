@@ -1,65 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>PWA LPDWCA</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">    
-        <link href="css/style.css" rel="stylesheet">
+  <head>
+    <title>PWA LPDWCA</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
 
-        <link rel="manifest" href="manifest.webmanifest">
+    <link rel="manifest" href="manifest.webmanifest" />
 
-        <script>
-           window.addEventListener('load',()=>{
+    <script>
+      window.addEventListener("load", () => {
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("sw.js");
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="app"></div>
 
-            if("serviceWorker" in navigator ){
-                navigator.serviceWorker.register('sw.js')
-            }
-           
-           })
-               
-            
-        </script>
-      
-    </head>
-    <body>
-    
-     
-        
-        <div class="container">
-
-            <div id="app">
-               
-            </div>
-
-    <form id="form" >
+      <form id="form">
         <h1>CHAT PWA</h1>
-           
-                    <input type="text" id="name" placeholder="Votre pseudo">
-             
-            <div class="row">
-            
-            <div class="col-8">
-                <textarea class="form-control" id="message" placeholder="Votre message:" rows="3"></textarea>
-            </div>
-            </div>
-            <div class="row">
-                <div class="d-grid gap-2">
-                    <button id="envoyer" type="submit" class="btn btn-primary">ENVOYER</button>
-                </div>
-            </div>
-    </form> 
-  
-     
-           
+
+        <input type="text" id="name" placeholder="Votre pseudo" />
+
+        <div class="row">
+          <div class="col-8">
+            <textarea
+              class="form-control"
+              id="message"
+              placeholder="Votre message:"
+              rows="3"
+            ></textarea>
           </div>
-    </body>
-  
-    <script src="./sw.js"></script>
+        </div>
+        <div class="row">
+          <div class="d-grid gap-2">
+            <button id="envoyer" type="submit" class="btn btn-primary">
+              ENVOYER
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 
-  
-    <script src="js/chat.js"></script>
+  <script src="./sw.js"></script>
 
-  
-   
-  
+  <script src="js/chat.js"></script>
 </html>
