@@ -43,6 +43,7 @@ form.addEventListener("submit", (e) => {
 
 // Creer un boutton pour effacer la conversation
 let clearBtn = document.createElement("button");
+clearBtn.classList.add("btn-secondary");
 clearBtn.innerText = "Effacer la conversation";
 let chatBox = document.getElementById("app");
 
