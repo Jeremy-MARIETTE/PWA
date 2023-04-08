@@ -5,17 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PWA LPDWCA</title>
-    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
-
     <script>
-    window.addEventListener("load", () => {
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("serviceWorker.js");
-        }
-      });
-    </script>
-    
+      window.addEventListener("load", () => {
+          if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("serviceWorker.js");
+          }
+        });
+      </script>
     <!-- ios support -->
     <link rel="apple-touch-icon" href="images/icon-192x192.png">
     <link rel="apple-touch-icon" href="images/icon-256x256.png">
@@ -59,5 +57,7 @@
         </form>
      </div>    
 </body>
+
+<script src="./serviceWorker.js"></script>
 <script src="js/chat.js"></script>
 </html>
