@@ -13,6 +13,9 @@
     margin: 0 auto;
     background-color: rgb(238, 247, 247);
     border-radius: 8px;
+    overflow-y: scroll;
+    scrollbar-color: rebeccapurple green;
+    scrollbar-width: thin;
   }
   .bottom-chat {
     margin-top: 20vh;
