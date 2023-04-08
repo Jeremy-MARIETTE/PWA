@@ -1,0 +1,32 @@
+{
+    "name": "LP DWCA",
+    "short_name": "LP DWCA",
+    "start_url":"https://chan.alwaysdata.net/PWA/",
+    "display" : "standalone",
+    "background_color": "#2196f3",
+    "theme_color": "#2196f3",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "images/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+
+
+
+
+
+
+}

@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PWA LPDWCA</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/style.css" rel="stylesheet" />
-
-    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="manifest" href="manifest.json">
 
     <script>
-      window.addEventListener("load", () => {
+    window.addEventListener("load", () => {
         if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("sw.js");
+          navigator.serviceWorker.register("serviceWorker.js");
         }
       });
     </script>
-  </head>
-  <body>
-
+    
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="images/icon-192x192.png">
+    <link rel="apple-touch-icon" href="images/icon-256x256.png">
+    <link rel="apple-touch-icon" href="images/icon-384x384.png">
+    <link rel="apple-touch-icon" href="images/icon-512x512.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#2196f3">
+    <meta name="theme-color" content="#2196f3">
+</head>
+<body>
     <div class="title">
-      <h1>CHAT PWA</h1>
-      <img src="./images/icon-192x192.png" alt="icone" width="40px" height="40px">
-    </div>
-
-    <div class="container">
-
-      <div id="app"></div>
-
-      <h3 class="informations"> Vos informations</h3>
-      <form id="form">
-
-        <input type="text" id="name" placeholder="Votre pseudo" />
-
-        <div class="row">
-          <div class="col-8">
-            <textarea
-              class="form-control"
-              id="message"
-              placeholder="Votre message:"
-              rows="3"
-            ></textarea>
+        <h1>CHAT PWA</h1>
+        <img src="./images/icon-192x192.png" alt="icone" width="40px" height="40px">
+      </div>
+  
+      <div class="container">
+  
+        <div id="app"></div>
+  
+        <h3 class="informations"> Vos informations</h3>
+        <form id="form">
+  
+          <input type="text" id="name" placeholder="Votre pseudo" />
+  
+          <div class="row">
+            <div class="col-8">
+              <textarea
+                class="form-control"
+                id="message"
+                placeholder="Votre message:"
+                rows="3"
+              ></textarea>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="d-grid gap-2">
-            <button id="envoyer" type="submit" class="btn btn-primary">
-              ENVOYER
-            </button>
+          <div class="row">
+            <div class="d-grid gap-2">
+              <button id="envoyer" type="submit" class="btn btn-primary">
+                ENVOYER
+              </button>
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
-  </body>
-
-  <script src="./sw.js"></script>
-
-  <script src="js/chat.js"></script>
+        </form>
+     </div>    
+</body>
+<script src="js/chat.js"></script>
 </html>
