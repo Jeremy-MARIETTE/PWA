@@ -6,14 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PWA LPDWCA</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.webmanifest">
     <script>
       window.addEventListener("load", () => {
           if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("serviceWorker.js");
+            navigator.serviceWorker.register("sw.js");
           }
         });
-      </script>
+      
+          if (window.Notification && Notification.permission === "granted") {
+            const notif= new Notification ( 'ma première notification' )
+            alert("Vous avez donné les permissions pour notifications.");
+            }
+
+            else if (window.Notification && Notification.permission !== "denied") {
+              Notification.requestPermission(status => {
+                if (status === "granted") {
+                  const notif= new Notification ( 'ma première notification' )
+                  alert("Vous avez donné les permissions pour notifications.");
+                } else {
+                  alert("Vous avez refusé de donner les permissions pour notifications.");
+                }
+              });
+            } else {
+
+              alert(
+                "Vous avez refusé de donner les permissions pour notifications.");
+            } 
+          
+     </script>
+
+      
     <!-- ios support -->
     <link rel="apple-touch-icon" href="images/icon-192x192.png">
     <link rel="apple-touch-icon" href="images/icon-256x256.png">
@@ -58,6 +81,6 @@
      </div>    
 </body>
 
-<script src="./serviceWorker.js"></script>
+<script src="./sw.js"></script>
 <script src="js/chat.js"></script>
 </html>
