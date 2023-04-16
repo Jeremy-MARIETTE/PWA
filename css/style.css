@@ -1,108 +1,67 @@
-@media (min-width: 800px) {
-  body {
-    width: 800px;
-    margin: 20px auto;
-  }
-  #app {
-    height: 30vh;
-    width: auto;
-    margin-top: 10px;
-    padding-top: 10px;
-    padding-left: 10%;
-    border: gray solid 1px;
-    margin: 0 auto;
-    background-color: rgb(238, 247, 247);
-    border-radius: 8px;
-    overflow-y: scroll;
-    scrollbar-color: rebeccapurple green;
-    scrollbar-width: thin;
-  }
-  .bottom-chat {
-    margin-top: 20vh;
-  }
-  textarea {
-    resize: none;
-  }
-  .informations {
-    margin: 5vh 0 2vh 0;
-    color: rgb(106, 170, 226);
-  }
-  h1 {
-    text-align: center;
-    margin-top: 0;
-    color: rgb(106, 170, 226);
-  }
-  button {
-    background-color: rgb(238, 247, 247);
-    margin: 5px;
-    border-radius: 8px;
-  }
-  #message,
-  #name {
-    margin: 5px;
-  }
-  #form {
-    margin: 0 auto;
-    border: gray solid 1px;
-    background-color: rgb(238, 247, 247);
-    border-radius: 8px;
-  }
-  .title {
-    display: flex;
-    justify-content: center;
-  }
-  .btn-secondary {
-    display: block;
-    position: relative;
-  }
+body {
+  width: 80%;
+  margin: 20px auto;
 }
-@media (max-width: 800px) {
-  #app {
-    height: 30vh;
-    margin-top: 10px;
-    padding-top: 10px;
-    padding-left: 10%;
-    border: gray solid 1px;
-    margin: 0 auto;
-    background-color: rgb(238, 247, 247);
-    border-radius: 8px;
-  }
-  .bottom-chat {
-    margin-top: 20vh;
-  }
-  textarea {
-    resize: none;
-  }
-  .informations {
-    margin: 5vh 0 2vh 0;
-    color: rgb(106, 170, 226);
-  }
-  h1 {
-    text-align: center;
-    margin-top: 0;
-    color: rgb(106, 170, 226);
+#app {
+  height: 30vh;
+  width: auto;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-left: 10%;
+  border: gray solid 1px;
+  margin: 0 auto;
+  background-color: rgb(238, 247, 247);
+  border-radius: 8px;
+  overflow-y: scroll;
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}
+.bottom-chat {
+  margin-top: 20vh;
+}
+textarea {
+  resize: none;
+}
+.informations {
+  margin: 5vh 0 2vh 0;
+  color: rgb(106, 170, 226);
+}
+h1 {
+  text-align: center;
+  margin-top: 0;
+  color: rgb(106, 170, 226);
+}
+button {
+  background-color: rgb(154, 224, 224);
+  margin: 5px;
+  border-radius: 8px;
+}
+#message,
+#name {
+  margin: 5px;
+}
+#form {
+  margin: 0 auto;
+  border: gray solid 1px;
+  background-color: rgb(238, 247, 247);
+  border-radius: 8px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+}
+.btn-secondary {
+  display: block;
+  position: relative;
+}
+
+@media only screen and (min-width: 600px) {
+  h3,
+  h1,
+  p {
+    font-size: 2em;
   }
   button {
-    background-color: rgb(238, 247, 247);
-    margin: 5px;
-    border-radius: 8px;
-  }
-  #message,
-  #name {
-    margin: 5px;
-  }
-  #form {
-    margin: 0 auto;
-    border: gray solid 1px;
-    background-color: rgb(238, 247, 247);
-    border-radius: 8px;
-  }
-  .title {
-    display: flex;
-    justify-content: center;
-  }
-  .btn-secondary {
-    display: block;
-    position: relative;
+    padding: 20px;
   }
 }
